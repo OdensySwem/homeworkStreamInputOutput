@@ -9,7 +9,7 @@ import java.util.zip.ZipOutputStream;
 public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         //Создание файлов;
-        File gamesDir = new File("/Users/nikita-butorin/Desktop/Games");
+        File gamesDir = new File("C:/Desktop/Games");
 
         File src = new File(gamesDir, "src");
         File res = new File(gamesDir, "res");
@@ -38,20 +38,20 @@ public class Main {
         GameProgress gm5 = new GameProgress(833, 5, 4, 3.5);
 
         ArrayList<String> gmList = new ArrayList<>();
-        gmList.add("/Users/nikita-butorin/Desktop/Games/savegames/save1.dat");
-        gmList.add("/Users/nikita-butorin/Desktop/Games/savegames/save2.dat");
-        gmList.add("/Users/nikita-butorin/Desktop/Games/savegames/save3.dat");
-        gmList.add("/Users/nikita-butorin/Desktop/Games/savegames/save4.dat");
-        gmList.add("/Users/nikita-butorin/Desktop/Games/savegames/save5.dat");
+        gmList.add("C:/Desktop/Games/savegames/save1.dat");
+        gmList.add("C:/Desktop/Games/savegames/save2.dat");
+        gmList.add("C:/Desktop/Games/savegames/save3.dat");
+        gmList.add("C:/Desktop/Games/savegames/save4.dat");
+        gmList.add("C:/Desktop/Games/savegames/save5.dat");
 
         //Добавление объектов в savegames;
-        saveGame("/Users/nikita-butorin/Desktop/Games/savegames/save1.dat", gm1);
-        saveGame("/Users/nikita-butorin/Desktop/Games/savegames/save2.dat", gm2);
-        saveGame("/Users/nikita-butorin/Desktop/Games/savegames/save3.dat", gm3);
-        saveGame("/Users/nikita-butorin/Desktop/Games/savegames/save4.dat", gm4);
-        saveGame("/Users/nikita-butorin/Desktop/Games/savegames/save5.dat", gm5);
+        saveGame("C:/Desktop/Games/savegames/save1.dat", gm1);
+        saveGame("C:/Desktop/Games/savegames/save2.dat", gm2);
+        saveGame("C:/Desktop/Games/savegames/save3.dat", gm3);
+        saveGame("C:/Desktop/Games/savegames/save4.dat", gm4);
+        saveGame("C:/Desktop/Games/savegames/save5.dat", gm5);
 
-        zipFiles("/Users/nikita-butorin/Desktop/Games/savegames/files.zip", gmList);
+        zipFiles("C:/Desktop/Games/savegames/files.zip", gmList);
 
         for (File file: Objects.requireNonNull(saveGames.listFiles())){
             String fString = file.toString();
@@ -64,9 +64,9 @@ public class Main {
             }
         }
 
-        openZip("/Users/nikita-butorin/Desktop/Games/savegames/files.zip", "/Users/nikita-butorin/Desktop/Games/savegames");
-        System.out.println(openProgress("/Users/nikita-butorin/Desktop/Games/savegames/save1.dat"));
-        System.out.println(openProgress("/Users/nikita-butorin/Desktop/Games/savegames/save2.dat"));
+        openZip("C:/Desktop/Games/savegames/files.zip", "C:/Desktop/Games/savegames");
+        System.out.println(openProgress("C:/Desktop/Games/savegames/save1.dat"));
+        System.out.println(openProgress("C:/Desktop/Games/savegames/save2.dat"));
     }
 
     public static void zipFiles(String zipPath, ArrayList<String> files) throws FileNotFoundException {
